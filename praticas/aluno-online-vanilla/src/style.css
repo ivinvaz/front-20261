@@ -22,7 +22,7 @@ body{
 
 main {
     flex:1;
-    margin: 3vh 3vh ;
+    margin: 3vh;
 }
 
 header {
@@ -57,6 +57,7 @@ article > ul{
     list-style: none;
     padding: 2vh;
 }
+
 article > h3{
     background-color: var(--cor-fundo);
     border-top-left-radius: 15px;
@@ -80,7 +81,7 @@ aside > header {
     justify-content: flex-start;
     margin-top: 4vh;
     margin-bottom: 12vh;
-    padding: 0vh 4vh;
+    padding: 0 4vh;
 }
 
 aside > img {
@@ -99,7 +100,7 @@ aside > ul > li {
     font-weight: bold;
 }
 
-@media (max-width: 768px){
+@media (width <= 768px){
     aside {
         display:none;
     }
@@ -108,7 +109,7 @@ aside > ul > li {
     }
 }
 
-@media (min-width: 1000px){
+@media (width >= 1000px){
     main > section {
         max-width: 100px;
         display: grid;
