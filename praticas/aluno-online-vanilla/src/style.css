@@ -94,7 +94,7 @@ aside > ul{
     margin-left: 7vh;
 }
 
-aside > ul > li {
+aside > li {
     margin-bottom: 4vh;
     color: var(--cor-texto);
     font-weight: bold;
@@ -104,6 +104,7 @@ aside > ul > li {
     aside {
         display:none;
     }
+
     article {
         max-width: 300px;
     }
@@ -117,6 +118,7 @@ aside > ul > li {
         grid-template-rows: auto 1fr;
         gap: 4vh;
     }
+    
     article {
         max-width: 400px;
     }
