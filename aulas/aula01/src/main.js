@@ -12,7 +12,7 @@ botao.addEventListener('click',function(e){
 
     erroMatricula.textContent = '';
     erroSenha.textContent = '';
-
+ 
     if(matriculaInput.value === '') {
         erroMatricula.textContent = "Matrícula é obrigatório";
         return;
