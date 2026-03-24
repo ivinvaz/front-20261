@@ -13,6 +13,7 @@
     --cor-fundo: #e9e9e9;
     --cor-texto: #303030;
     --cor-article: #F2F2F2;
+    --cor-texto-erro: red;
 }
 
 body{
@@ -20,7 +21,6 @@ body{
     height: 100vh;
 }
 
-/**CSS de Index**/
 main {
     flex:1;
     margin: 3vh;
@@ -122,30 +122,28 @@ aside > li {
     }
 }
 
-/**CSS de Login**/
-
-.bodyLogin{
+.body-login{
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-.mainLogin{
+.main-login{
     display: flex;
     flex: 1;
     height: fit-content;
     justify-content: center;
     flex-direction: column;
-    padding: 1rem 1rem;
+    padding: 1rem;
 }
 
-.mainLogin > img {
+.main-login > img {
     height: 8rem;
     width: 8rem;
     margin: 0 auto;
 }
 
-.mainLogin > h1 {
+.main-login > h1 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -157,7 +155,7 @@ form {
     flex-direction: column;
 }
 
-form > input[type=email], input[type=password] {
+form > input[type="email"], input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -166,14 +164,14 @@ form > input[type=email], input[type=password] {
 
 form > button {
     background-color: var(--cor-fundo);
-    color: rgb(0, 0, 0);
+    color: var(--cor-texto);
     border: none;
     border-radius: 0.5rem;
     padding: 0.75rem;
 }
 
-@media (min-width: 768px){
-    .mainLogin {
+@media (width <= 768px){
+    .main-login {
         border: 1px solid var(--cor-fundo);
         border-radius: 12px;
         width: 25rem;
@@ -188,12 +186,12 @@ form > button {
     }
 }
 
-.footerLogin {
+.footer-login {
     display: flex;
     flex: 1;
     justify-content: center;
 }
 
-.erroText {
-    color: red;
+.erro-text {
+    color: var(--cor-texto-erro);
 }
