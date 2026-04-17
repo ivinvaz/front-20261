@@ -7,10 +7,8 @@ function Layout(props) {
       <Sidebar />
       <main>
         <Topbar titulo={props.titulo} />
-      <h2>{props.subtitulo}</h2>
-      <section>
-        {props.children}
-      </section>
+        <h2>{props.subtitulo}</h2>
+        <section>{props.children}</section>
       </main>
     </>
   );

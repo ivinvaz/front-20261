@@ -3,7 +3,7 @@ function Card(props) {
     <article>
       <h3>{props.titulo}</h3>
       <ul>
-        {props.items.map((item,index)=>(
+        {props.items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
@@ -12,3 +12,5 @@ function Card(props) {
 }
 
 export default Card;
+
+// Para redenrizar varios itens, utilizar a função .map
