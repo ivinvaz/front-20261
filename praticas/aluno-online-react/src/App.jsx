@@ -1,12 +1,20 @@
-import "./App.css";
-import Header from '../components/Header';
-import Card from "../components/Card";
-import Aside from "../components/Aside";
+import Boletos from "./pages/Boletos";
+import Dashboard from "./pages/Dashboard";
+import Faltas from "./pages/Faltas";
+import Notas from "./pages/Notas";
+import Requerimentos from "./pages/Requerimentos";
 
 function App() {
-  return <div className="flex flex-col md:flex-row w-full min-h-screen bg-gray-50">
-    <Aside className="flex-none md:flex-1"/>
-  </div>;
+  const pagina = 4;
+  return (
+    <>
+      {pagina == 1 && <Dashboard />}
+      {pagina == 2 && <Notas />}
+      {pagina == 3 && <Faltas />}
+      {pagina == 4 && <Boletos />}
+      {pagina == 5 && <Requerimentos />}
+    </>
+  );
 }
 
 export default App;
