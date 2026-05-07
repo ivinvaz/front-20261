@@ -3,7 +3,7 @@ import Sidebar  from "../Sidebar"
 import Topbar from "../Topbar"
 import "./Layout.css"
 
-export default function Layout({props}){
+export default function Layout(){
 
     const location = useLocation();
 

@@ -1,5 +1,5 @@
 import logo from "../../assets/learn.svg";
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 import "./Menu.css"
 
 export default function Menu() {
