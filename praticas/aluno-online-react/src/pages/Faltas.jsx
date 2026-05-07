@@ -4,7 +4,7 @@ import Tabela from "../components/Tabela";
 export default function Faltas() {
   return (
     <>
-      <PageTitle title="Hisórico de faltas por semestre" />
+      <PageTitle title="Histórico de faltas por semestre" />
       <Tabela
         title="2025.01"
         table={{
