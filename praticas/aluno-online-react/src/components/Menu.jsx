@@ -1,16 +1,22 @@
-function Menu() {
+import logo from "../assets/learn.svg";
+
+export default function Menu() {
   return (
-    <nav>
-      <ul className="list-disc gap-5">
-        <li className="text-xl font-bold mb-5">Dashboard</li>
-        <li className="text-xl font-bold mb-5">Notas</li>
-        <li className="text-xl font-bold mb-5">Faltas</li>
-        <li className="text-xl font-bold mb-5">Boletos</li>
-        <li className="text-xl font-bold mb-5">Requerimentos</li>
-        <li className="text-xl font-bold mb-5">Sair</li>
-      </ul>
-    </nav>
+    <aside className="bg-gray-300 h-screen hidden md:block w-64 p-4">
+      <header className="flex gap-2 justify-center items-center">
+        <img src={logo} alt="Logo da aplicação" className="w-12 h-12" />
+        <h1 className="text-lg font-bold">Aluno online</h1>
+      </header>
+      <nav className="mt-12">
+        <ul className="font-semibold">
+          <li>Dashboard</li>
+          <li>Notas</li>
+          <li>Faltas</li>
+          <li>Boletos</li>
+          <li>Requerimentos</li>
+          <li>Sair</li>
+        </ul>
+      </nav>
+    </aside>
   );
 }
-
-export default Menu;

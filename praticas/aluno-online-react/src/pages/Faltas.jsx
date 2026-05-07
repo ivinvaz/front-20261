@@ -1,42 +1,32 @@
+import PageTitle from "../components/PageTitle";
 import Tabela from "../components/Tabela";
-import Layout from "./Layout";
 
-function Faltas() {
-
-  const titulo1 = "2026.1"
-  
-  const titulo2 = "2025.2"
-  
-  const colunas = [
-    "Disciplinas",
-    "Total de Faltas",
-    "% de Presença"
-  ]
-
-  const dadosPrimeiraTB = [
-    {disciplina: "BI e Data Warehousing", faltas:"0", presenca:"100%"},
-    {disciplina: "Construção de Frontend", faltas:"0", presenca:"100%"},
-    {disciplina: "Manuntenção de Software e Devops", faltas:"0", presenca:"100%"},
-  ]
-
-  const dadosSegundaTB = [
-    {disciplina: "BI e Data Warehousing", faltas:"27", presenca:"87.5%"},
-    {disciplina: "Construção de Frontend", faltas:"3", presenca:"95%"},
-    {disciplina: "Manuntenção de Software e Devops", faltas:"10", presenca:"90%"},
-  ]
-
+export default function Faltas() {
   return (
     <>
-    <Layout
-    titulo="Minhas Faltas"
-    subtitulo="Histórico de Faltas por Semestre">
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Tabela titulos={colunas} dados={dadosPrimeiraTB} temTitulo={true} titulo={titulo1}/>
-        <Tabela titulos={colunas} dados={dadosSegundaTB} temTitulo={true} titulo={titulo2}/>
-      </section>
-    </Layout>
+      <PageTitle title="Hisórico de faltas por semestre" />
+      <Tabela
+        title="2025.01"
+        table={{
+          header: ["Disciplina", "Faltas", "Presença"],
+          rows: [
+            ["Matemática", "2", "90%"],
+            ["Segurança", "1", "85%"],
+            ["Engenharia de Software", "3", "80%"],
+          ],
+        }}
+      />
+      <Tabela
+        title="2025.02"
+        table={{
+          header: ["Disciplina", "Faltas", "Presença"],
+          rows: [
+            ["Geografia", "3", "90%"],
+            ["Governança de TI", "1", "85%"],
+            ["Programação Mobile", "3", "80%"],
+          ],
+        }}
+      />
     </>
   );
 }
-
-export default Faltas;

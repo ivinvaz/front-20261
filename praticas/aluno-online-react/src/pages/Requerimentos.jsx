@@ -1,32 +1,21 @@
-import Layout from "./Layout";
+import PageTitle from "../components/PageTitle";
 import Tabela from "../components/Tabela";
 
-function Requerimentos() {
-  const titulo = "";
-
-  const colunas = [
-    "Tipo de Requerimento",
-    "Data da Solicitação",
-    "Situação"
-  ]
-
-  const requerimento = [
-    {requerimento: "Revisão de Menção", data:"15/12/2025",situacao:"Indeferido"},
-    {requerimento: "Dispensa de Disciplina", data:"12/06/2025",situacao:"Indeferido"},
-    {requerimento: "Trancamento de Matrícula", data:"05/01/2024",situacao:"Deferido"},
-  ]
-
+export default function Requerimentos() {
   return (
     <>
-    <Layout
-    titulo="Meus Requerimentos"
-    subtitulo="Faça solicitações online para a secretaria ">
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Tabela titulos={colunas} dados={requerimento} temTitulo={false} titulo={titulo}/>
-      </section>
-    </Layout>
+      <PageTitle title="Faça solicitações online para a secretaria" />
+      <Tabela
+        table={{
+          header: ["Tipo de requerimento", "Data da solicitação", "Situação"],
+          rows: [
+            ["Requerimento de diploma", "01/01/2025", "Indeferido"],
+            ["Requerimento de histórico", "01/02/2025", "Aprovado"],
+            ["Requerimento de histórico", "11/08/2025", "Aprovado"],
+            ["Requerimento de histórico", "21/09/2025", "Aprovado"],
+          ],
+        }}
+      />
     </>
   );
 }
-
-export default Requerimentos;

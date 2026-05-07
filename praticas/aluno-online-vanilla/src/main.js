@@ -1,33 +1,41 @@
-import './style.css';
+import "./style.css";
 
-document.getElementById("formularioLogin").addEventListener('submit',function(e){
-    e.preventDefault();
+const button = document.querySelector("button");
 
-    const EmailInput = document.querySelector('#email');
-    const senhaInput = document.querySelector('#senha');
-    const erroEmail = document.querySelector('#emailErro');
-    const erroSenha = document.querySelector('#senhaErro');
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
 
-    erroEmail.textContent = '';
-    erroSenha.textContent = '';
- 
-    //O formulário não pode ser enviado se houver campos vazios
-    if(EmailInput.value === '' && senhaInput.value === ''){
-        erroEmail.textContent = "O Campo de email é obrigatório";
-        erroSenha.textContent = "O Campo de senha é obrigatório";
-        return;
-    }
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  const matricula = document.querySelector("#email");
+  const emailError = document.querySelector("#emailError");
+  const senha = document.querySelector("#senha");
+  const senhaError = document.querySelector("#senhaError");
 
+  emailError.textContent = "";
+  senhaError.textContent = "";
 
-    if(EmailInput.value === '') {
-        erroEmail.textContent = "O Campo de email é obrigatório";
-        return;
-    }
+  if (matricula.value === "") {
+    emailError.textContent = "Email é obrigatório";
+    return;
+  }
 
-    if(senhaInput.value === '') {
-        erroSenha.textContent = "O Campo de senha é obrigatório";
-        return;
-    }
+  if (!isValidEmail(matricula.value)) {
+    emailError.textContent = "Email deve ser um endereço de email válido";
+    return;
+  }
 
-    window.location.href = "http://localhost:5173/";
-})
+  if (senha.value === "") {
+    senhaError.textContent = "Senha é obrigatória";
+    return;
+  }
+
+  if (senha.value.length < 8) {
+    senhaError.textContent = "Senha deve ter pelo menos 8 caracteres";
+    return;
+  }
+
+  window.location.href = "index.html";
+});

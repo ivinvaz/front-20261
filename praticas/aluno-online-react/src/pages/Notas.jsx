@@ -1,42 +1,32 @@
-import Layout from "./Layout";
+import PageTitle from "../components/PageTitle";
 import Tabela from "../components/Tabela";
 
-function Notas() {
-  const titulo1 = "2026.1"
-  
-  const titulo2 = "2025.2"
-  
-  const colunas = [
-    "Disciplinas",
-    "A1",
-    "A2",
-    "A3",
-    "Mensão"
-  ]
-
-  const dadosPrimeiraTB = [
-    {disciplina: "BI e Data Warehousing", a1:"", a2:"",a3:"", mensao:"SR"},
-    {disciplina: "Construção de Frontend", a1:"", a2:"",a3:"", mensao:"SR"},
-    {disciplina: "Manuntenção de Software e Devops", a1:"", a2:"",a3:"", mensao:"SR"},
-  ]
-
-  const dadosSegundaTB = [
-    {disciplina: "BI e Data Warehousing", a1:"5.4", a2:"6.2",a3:"", mensao:"SR"},
-    {disciplina: "Construção de Frontend", a1:"6.3", a2:"6.1",a3:"", mensao:"SR"},
-    {disciplina: "Manuntenção de Software e Devops", a1:"7.4", a2:"7.1",a3:"", mensao:"SR"},
-  ]
-
+export default function Notas() {
   return (
     <>
-    <Layout
-      titulo="Minhas Notas"
-      subtitulo="Histórico de Notas por Semestre"
-    >
-        <Tabela titulos={colunas} dados={dadosPrimeiraTB} temTitulo={true} titulo={titulo1}/>
-        <Tabela titulos={colunas} dados={dadosSegundaTB} temTitulo={true} titulo={titulo2}/>
-    </Layout>
+      <PageTitle title="Histórico de notas por semestre" />
+      <Tabela
+        title="2025.01"
+        table={{
+          header: ["Disciplina", "A1", "A2", "A3", "Menção"],
+          rows: [
+            ["Matemática", "8.5", "7.0", "9.0", "B"],
+            ["Português", "7.5", "8.0", "8.5", "B"],
+            ["Inglês", "8.0", "7.5", "8.0", "B"],
+          ],
+        }}
+      />
+      <Tabela
+        title="2025.02"
+        table={{
+          header: ["Disciplina", "A1", "A2", "A3", "Menção"],
+          rows: [
+            ["Power BI", "8.5", "7.0", "9.0", "B"],
+            ["Contrução Backend", "8.5", "8.0", "6.5", "B"],
+            ["Segurança", "8.0", "7.5", "5.0", "B"],
+          ],
+        }}
+      />
     </>
   );
 }
-
-export default Notas;

@@ -1,14 +1,12 @@
-function Card(props) {
+export default function Card({ title, contentList }) {
   return (
-    <article className="border border-solid rounded-xl border-gray-200 m-5 flex flex-1 flex-col min-w-fit">
-      <h3 className="bg-gray-200 p-4 pt-2 pb-2 rounded-t-lg font-bold">{props.titulo}</h3>
-      <ul className="p-4">
-        {props.items.map((item,index)=>(
-          <li key={index}>{item}</li>
+    <article className="rounded border border-gray-300 mb-3">
+      <h3 className="font-bold bg-gray-300 text-center">{title}</h3>
+      <ul className="p-2">
+        {contentList.map((content, index) => (
+          <li key={index}>{content}</li>
         ))}
       </ul>
     </article>
   );
 }
-
-export default Card;
