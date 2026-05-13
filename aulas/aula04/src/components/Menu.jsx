@@ -1,11 +1,10 @@
-import "./Menu.css"
-import { NavLink, Link} from "react-router";
-import { useContext } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import "./Menu.css";
+import { useAuthContext } from "../contexts/AuthContext";
+import { NavLink, Link } from "react-router";
 
 export default function Menu(){
     const usuarioId = 0;
-    const { logout, usuario } = useContext(AuthContext);
+    const { logout, usuario } = useAuthContext();
     
     const handleSair = () =>{ 
         logout()       
