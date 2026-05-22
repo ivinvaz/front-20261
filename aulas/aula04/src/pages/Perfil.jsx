@@ -23,8 +23,8 @@ export default function Perfil(){
         },
         nascimento: {
             validate: {
-                dataMinima: (value) => Date.parse(value) > new Date(1900,0,1) || "Data inválida",
-                dataMaxima: (value) => Date.parse(value) < new Date() || "Data inválida"
+                dataMinima: (value) => Date.parse(`${value} 00:00:00 UTC`) > new Date(1899,11,31,0,0,0,0) || "Data inferior",
+                dataMaxima: (value) => Date.parse(`${value} 00:00:00 UTC`) < new Date().getTime() || "Data superior"
             }
         },
         telefone: {
