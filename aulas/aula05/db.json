@@ -1,5 +1,18 @@
 {
-  "produtos": [],
+  "produtos": [
+    {
+      "nome": "Banana",
+      "preco": "7",
+      "unidade": "Kg",
+      "id": "H0a7biPreGY"
+    },
+    {
+      "nome": "Maçã",
+      "preco": "10",
+      "unidade": "Kg",
+      "id": "czIvCprGR-8"
+    }
+  ],
   "clientes": [],
   "fornecedores": [],
   "pedidos": [],
