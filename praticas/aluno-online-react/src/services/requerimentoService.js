@@ -26,4 +26,4 @@ async function cadastrar(produto){
     }
 }
 
-export default { listar, cadastrar }
+export { listar, cadastrar };
