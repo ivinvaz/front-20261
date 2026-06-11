@@ -1,20 +1,27 @@
 import PageTitle from "../components/PageTitle";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router";
+import { cadastrar } from "../services/requerimentoService";
 
 export default function NovoRequerimentos() {
     const { register, handleSubmit, formState: {errors}, reset } = useForm();
     const navigate = useNavigate()
 
     const salvar = (data) => {
-        console.log(data)
-        reset();
-        navigate("/requerimentos");
+        const disparar = async () => {
+            await cadastrar(data);
+            reset();
+            navigate("/requerimentos");
+        };
+        disparar();
     };
 
     const regras = {
         tipo: { 
             required: "Tipo é obrigatório", 
+        },
+        situacao: { 
+            required: "Situação é obrigatório", 
         },
         descricao: { 
             required: "Descrição é obrigatório",
@@ -37,6 +44,16 @@ export default function NovoRequerimentos() {
                         <option value="ReqHist">Requerimento de Histórico</option>
                         <option value="ReqDip">Requerimento de Diploma</option>
                         <option value="ReqMat">Requerimento de Matrícula</option>
+                    </select >
+                    {errors?.tipoRequerimento && <p>{errors.tipoRequerimento.message}</p>}
+                </div>
+                <div className="flex flex-col my-2">
+                    <label htmlFor="situacaoRequerimento" className="font-bold">Situação do Requerimento</label>
+                    <select defaultValue="" id="situacaoRequerimento" {...register("situacaoRequerimento", regras.situacao)}>
+                        <option value="" disabled>Selecione uma opção...</option>
+                        <option value="aprovado">Aprovado</option>
+                        <option value="indeferido">Indeferido</option>
+                        <option value="analise">Em análise</option>
                     </select >
                     {errors?.tipoRequerimento && <p>{errors.tipoRequerimento.message}</p>}
                 </div>
