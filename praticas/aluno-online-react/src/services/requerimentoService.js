@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/produtos";
+const url = "http://localhost:3000/requerimentos";
 
 async function listar(){
     try{
