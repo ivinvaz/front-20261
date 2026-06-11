@@ -1,8 +1,24 @@
 import PageTitle from "../components/PageTitle";
 import Tabela from "../components/Tabela";
 import { NavLink } from "react-router";
+import { listar } from "../services/requerimentoService";
+import { useEffect, useState} from "react";
 
 export default function Requerimentos() {
+  const [requerimentos, setRequerimentos] = useState([]);
+
+  useEffect(()=>{
+    const disparar = async ()=>{
+      const itens  = await listar() 
+      let itensLimpos = [];
+      itens.forEach((item)=>{
+        itensLimpos.push([item.tipoRequerimento,item.dtrequerimento,item.situacaoRequerimento])
+      })
+      setRequerimentos(itensLimpos)
+    }
+    disparar()    
+  },[])
+  
   return (
     <>
       <PageTitle title="Faça solicitações online para a secretaria" />
@@ -12,12 +28,7 @@ export default function Requerimentos() {
       <Tabela 
         table={{
           header: ["Tipo de requerimento", "Data da solicitação", "Situação"],
-          rows: [
-            ["Requerimento de diploma", "01/01/2025", "Indeferido"],
-            ["Requerimento de histórico", "01/02/2025", "Aprovado"],
-            ["Requerimento de histórico", "11/08/2025", "Aprovado"],
-            ["Requerimento de histórico", "21/09/2025", "Aprovado"],
-          ],
+          rows: requerimentos,
         }}
       />
     </>
