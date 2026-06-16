@@ -2,9 +2,9 @@
   "name": "aula05",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "cliente.js",
   "scripts": {
-    "test": "json-server db.json"
+    "dev": "json-server db.json"
   },
   "keywords": [],
   "author": "",

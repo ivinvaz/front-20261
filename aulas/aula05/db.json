@@ -1,14 +1,26 @@
 {
   "produtos": [
     {
-      "nome": "Maçã",
-      "preco": "10",
-      "unidade": "Kg",
-      "id": "czIvCprGR-8"
+      "id": "29iWrIQBpFc",
+      "nome": "Banana Nanica",
+      "preco": "19,99",
+      "unidade": "Kg"
+    },
+    {
+      "id": "cuwEguaWWbQ",
+      "nome": "Laranja Pera",
+      "preco": "15,99",
+      "unidade": "Un"
     }
   ],
-  "clientes": [],
   "fornecedores": [],
   "pedidos": [],
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "jose@iesb.br",
+      "senha": 123456 
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
