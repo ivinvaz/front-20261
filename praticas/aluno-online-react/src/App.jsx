@@ -8,10 +8,11 @@ import Notas from "./pages/Notas";
 import Requerimentos from "./pages/Requerimentos";
 import Layout from "./components/Layout/Layout"
 import NovoRequerimentos from "./pages/NovoRequerimento";
+import { AuthProvider } from "./context/authContext";
 
 function App() {
   return (
-    <>
+    <AuthProvider>      
     <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Dashboard/>}/>
@@ -23,7 +24,7 @@ function App() {
         </Route>
         <Route path="/login"element={<Login/>}/>
     </Routes>
-    </>
+    </AuthProvider>
   );
 }
 
