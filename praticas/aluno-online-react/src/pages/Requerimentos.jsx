@@ -3,18 +3,27 @@ import Tabela from "../components/Tabela";
 import { NavLink } from "react-router";
 import { listar } from "../services/requerimentoService";
 import { useEffect, useState} from "react";
+import { useAuthContext } from "../context/authContext";
 
 export default function Requerimentos() {
   const [requerimentos, setRequerimentos] = useState([]);
-
+  const { logout } = useAuthContext();
+  
   useEffect(()=>{
     const disparar = async ()=>{
-      const itens  = await listar() 
-      let itensLimpos = [];
-      itens.forEach((item)=>{
-        itensLimpos.push([item.tipoRequerimento,item.dtrequerimento,item.situacaoRequerimento])
-      })
-      setRequerimentos(itensLimpos)
+      try{
+        const itens  = await listar() 
+        let itensLimpos = [];
+        itens.forEach((item)=>{
+          itensLimpos.push([item.tipoRequerimento,item.dtrequerimento,item.situacaoRequerimento])
+        })
+        setRequerimentos(itensLimpos)
+      }catch(erro){
+          if (erro.message === "401") {
+            logout();
+        }
+      }
+
     }
     disparar()    
   },[])
