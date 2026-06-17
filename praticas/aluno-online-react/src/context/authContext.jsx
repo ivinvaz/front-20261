@@ -39,4 +39,5 @@ function useAuthContext() {
   return useContext(AuthContext);
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { useAuthContext, AuthProvider };
